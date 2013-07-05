@@ -1,0 +1,11 @@
+Changes
+LICENSE
+MANIFEST
+META.yml
+Makefile.PL
+README
+README.md
+bla.html
+dist.ini
+lib/Convert/TAP/Archive.pm
+t/00_empty.t
