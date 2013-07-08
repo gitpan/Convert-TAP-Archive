@@ -3,6 +3,7 @@ abstract: 'Read from a TAP archive and convert it for displaying'
 author:
   - 'Boris Däppen <bdaeppen.perl@gmail.com>, Renée Bäcker <module@renee-baecker.de>'
 build_requires:
+  Cwd: 0
   Test::More: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
@@ -23,4 +24,4 @@ requires:
 resources:
   homepage: https://github.com/borisdaeppen/Convert-TAP-Archive
   repository: git://github.com/borisdaeppen/Convert-TAP-Archive.git
-version: 0.001
+version: 0.002

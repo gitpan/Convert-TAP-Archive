@@ -1,6 +1,8 @@
+# ABSTRACT: Read from a TAP archive and convert it for displaying
+
 package Convert::TAP::Archive;
 {
-  $Convert::TAP::Archive::VERSION = '0.001';
+  $Convert::TAP::Archive::VERSION = '0.002';
 }
 
 use strict;
@@ -13,8 +15,6 @@ use TAP::Harness::Archive;
 require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT = qw(convert_from_taparchive);
-
-# ABSTRACT: Read from a TAP archive and convert it for displaying
 
 # one and only subroutine of this module
 sub convert_from_taparchive {
@@ -38,9 +38,9 @@ sub convert_from_taparchive {
 
     # Now we do a lot of magic to convert this stuff...
 
-    my $harness   = TAP::Harness->new({ formatter => $formatter }); 
+    my $harness = TAP::Harness->new({ formatter => $formatter }); 
 
-    $formatter->verbose(0);
+    $formatter->really_quiet(1);
     $formatter->prepare;
 
     my $session;
@@ -52,8 +52,7 @@ sub convert_from_taparchive {
             },  
         },  
         made_parser_callback => sub {
-                # TODO: this code here print to STDOUT, this is baaaaaaaad
-                $session = $formatter->open_test( $_[1], $_[0] );
+            $session = $formatter->open_test( $_[1], $_[0] );
         }   
     });
 
@@ -77,7 +76,7 @@ Convert::TAP::Archive - Read from a TAP archive and convert it for displaying
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -92,7 +91,7 @@ version 0.001
 
 =head1 ABOUT
 
-This modul can be of help for you if you have TAP archives (e.g. created with C<prove -a> and now you wish to have the content of this archives in a special format like HTML or JUnit.
+This modul can be of help for you if you have TAP archives (e.g. created with C<prove -a> and now you wish to have the content of this archives in a special format like HTML or JUnit (or whatever format).
 
 =head1 EXPORTED METHODS
 
@@ -111,21 +110,19 @@ The method will return the content of the TAP archive, parsed according to the f
 
 =head1 BUGS AND LIMITATIONS
 
+No known issues.
+
+=head1 SEE ALSO
+
 =over
 
 =item *
 
-The author of this module has no expert knowledge about TAP processing and this means, this code could be crap.
-The author wrote this module, because he didn't find any better solution for the simple task of reading and parsing a TAP archive.
+L<Test::Harness>
 
 =item *
 
-The method prints the pure TAP to C<STDOUT>, because the parsing library is doing so... you'll have to live with it or send a patch that fixes this.
-The section in the code producing this behaviour is marked with a I<TODO>.
-
-=item *
-
-For now there are no tests implemented to ensure quality.
+L<TAP::Formatter::Base> and its implementations for L<HTML|TAP::Formatter::HTML>, L<JUnit|TAP::Formatter::JUnit> or L<Console|TAP::Formatter::Console>.
 
 =back
 
