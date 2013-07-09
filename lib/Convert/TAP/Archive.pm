@@ -2,7 +2,7 @@
 
 package Convert::TAP::Archive;
 {
-  $Convert::TAP::Archive::VERSION = '0.002';
+  $Convert::TAP::Archive::VERSION = '0.003';
 }
 
 use strict;
@@ -76,7 +76,7 @@ Convert::TAP::Archive - Read from a TAP archive and convert it for displaying
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 

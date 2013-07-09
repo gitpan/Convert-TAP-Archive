@@ -1,5 +1,8 @@
 Revision history for VM-JiffyBox
 
+0.003     2013-07-09 09:29:55 Europe/Berlin
+          - added test-prereq, thx CpanReporters, once again!
+
 0.002     2013-07-08 12:31:33 Europe/Berlin
           - fix bug which printed archive to stdout
           - added basic tests
