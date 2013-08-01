@@ -25,4 +25,4 @@ requires:
 resources:
   homepage: https://github.com/borisdaeppen/Convert-TAP-Archive
   repository: git://github.com/borisdaeppen/Convert-TAP-Archive.git
-version: 0.003
+version: 0.004
