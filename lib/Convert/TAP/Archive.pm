@@ -2,7 +2,7 @@
 
 package Convert::TAP::Archive;
 {
-  $Convert::TAP::Archive::VERSION = '0.004';
+  $Convert::TAP::Archive::VERSION = '0.005';
 }
 
 use strict;
@@ -89,7 +89,7 @@ Convert::TAP::Archive - Read from a TAP archive and convert it for displaying
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -101,6 +101,11 @@ version 0.004
             );
 
 =encoding utf8
+
+=head1 IMPORTANT NOTE
+
+B<THIS MODULE IS DEPRECATED!>
+Please see L<Archive::TAP::Convert> instead.
 
 =head1 ABOUT
 
@@ -132,6 +137,11 @@ No known issues.
 =head1 SEE ALSO
 
 =over
+
+=item *
+
+This module is no longer maintained!
+Please see L<Archive::TAP::Convert> for the same funcionality.
 
 =item *
 
